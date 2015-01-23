@@ -193,6 +193,57 @@
 </nav>
       
   
+    <article id="post-html解析" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/01/23/html解析/" class="article-date">
+  	<time datetime="2015-01-23T09:24:05.000Z" itemprop="datePublished">1月 23 2015</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/23/html解析/">使用TFHpple解析html</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们平时做一些iOS项目或者Demo的时候，都会遇到对一个html的页面进行加载。一半情况下，为了简单省事，我们会使用UIWebView对html页面进行加载，就算页面中有一些自己不满意的东西，也会通过UIWebView与js的交互，对页面的一些界面元素进行修改。但是除了用UIWebView，我们还可以使用TFHpple对html的数据进行解析，来完成我们的需求。下面就为大家介绍一下怎样使用TFHpple来解析一个html页面。</p>
+<h2 id="前期准备工作">前期准备工作</h2>
+<h3 id="引入静态库文件">引入静态库文件</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在 targets-&gt;Build Phases-&gt;Link Binary With Libraries 中，添加 libxml2.<span class="number">2</span>.dylib</div></pre></td></tr></table></figure>
+
+<h3 id="添加库文件的_header_search_paths">添加库文件的 header search paths</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在 project-&gt;Build Phases-&gt;Build Settings-&gt;Search Paths 中，添加 header search paths 路径 /usr/include/libxml2</div></pre></td></tr></table></figure>
+
+<h3 id="将从github:(https://github-com/topfunky/hpple)上下载的源码包(Hpple)拖入工程当中">将从github:(<a href="https://github.com/topfunky/hpple)上下载的源码包(Hpple)拖入工程当中" target="_blank" rel="external">https://github.com/topfunky/hpple)上下载的源码包(Hpple)拖入工程当中</a></h3>
+<h2 id="使用详情">使用详情</h2>
+<h3 id="未完待续">未完待续</h3>
+
+      
+    </div>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
