@@ -32,6 +32,7 @@
 <meta property="og:image" content="/img/19.png">
 <meta property="og:image" content="/img/20.png">
 <meta property="og:image" content="/img/21.png">
+<meta property="og:image" content="/img/22.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XMPP环境配置">
 <meta name="twitter:description" content="配置XMPP环境首先需要安装几个软件，（XAMPP，openfire 本地服务器，spark 模拟即时通讯软件）">
@@ -270,21 +271,22 @@
 <p><img src="/img/12.png" alt="配置"></p>
 <p>（9）选中刚创建数据库，会发现里面是空的，这时候我们需要向数据库中导入一个依赖库。首先我们要找到我们需要的依赖库，在跟目录下，选择 usr &gt; local &gt; openfire，这时候会发现openfire我们无权访问，右键openfire文件，点击 显示简介，然后将共享与权限全部改成 读与写，然后我们会看见openfire中的文件</p>
 <p><img src="/img/13.png" alt="配置"></p>
-<p>（10）然后选择 openfire &gt; resources &gt; database &gt; openfire_mysql.sql，然后将openfire_mysql.sql 拖到桌面</p>
 <p><img src="/img/14.png" alt="配置"></p>
-<p>（11）回到配置XAMPP浏览器中，选中数据库，点击导入，选取文件，文件选择的是刚才我们拖到桌面上的 openfire_mysql.sql 文件，然后点击执行</p>
+<p>（10）然后选择 openfire &gt; resources &gt; database &gt; openfire_mysql.sql，然后将openfire_mysql.sql 拖到桌面</p>
 <p><img src="/img/15.png" alt="配置"></p>
+<p>（11）回到配置XAMPP浏览器中，选中数据库，点击导入，选取文件，文件选择的是刚才我们拖到桌面上的 openfire_mysql.sql 文件，然后点击执行</p>
 <p><img src="/img/16.png" alt="配置"></p>
-<p>（12） 回到配置 openfire服务器页面，在 数据库设置 - 标准连接 下对 数据库 URL 进行修改，将[host-name] 改成 127.0.0.1 ，[database-name] 改成刚才创建的数据库名字，然后点击继续</p>
 <p><img src="/img/17.png" alt="配置"></p>
-<p>（13）特性设置，选择默认的 初始设置</p>
+<p>（12） 回到配置 openfire服务器页面，在 数据库设置 - 标准连接 下对 数据库 URL 进行修改，将[host-name] 改成 127.0.0.1 ，[database-name] 改成刚才创建的数据库名字，然后点击继续</p>
 <p><img src="/img/18.png" alt="配置"></p>
-<p>（14）管理员帐户，直接跳过，可以不填，点击跳过。然后出现安装完成，最后点击登陆到管理控制台</p>
+<p>（13）特性设置，选择默认的 初始设置</p>
 <p><img src="/img/19.png" alt="配置"></p>
-<p>（15）输入账号密码都是 admin</p>
+<p>（14）管理员帐户，直接跳过，可以不填，点击跳过。然后出现安装完成，最后点击登陆到管理控制台</p>
 <p><img src="/img/20.png" alt="配置"></p>
-<p>（16）登陆成功，会看见自己的服务器名称，此时XMPP环境已经配置完成</p>
+<p>（15）输入账号密码都是 admin</p>
 <p><img src="/img/21.png" alt="配置"></p>
+<p>（16）登陆成功，会看见自己的服务器名称，此时XMPP环境已经配置完成</p>
+<p><img src="/img/22.png" alt="配置"></p>
 
       
     </div>
