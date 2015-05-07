@@ -12,6 +12,7 @@
 <meta property="og:site_name" content="第三方">
 <meta property="og:description">
 <meta property="og:image" content="/img/CoreLocation/CoreLocation.jpg">
+<meta property="og:image" content="/img/CoreLocation/plist.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS8 - CoreLocation地图定位">
 <meta name="twitter:description">
@@ -247,7 +248,22 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (void)viewWillDisappear:(BOOL)animated { </div><div class="line">    </div><div class="line">    [super viewWillDisappear:animated]; </div><div class="line">    [_locationManager stopUpdatingLocation]; </div><div class="line"></div><div class="line">}</div></pre></td></tr></table></figure>
 
 <h2 id="iOS8中使用CoreLocation定位">iOS8中使用CoreLocation定位</h2>
-<p>&lt;未完待续&gt;</p>
+<h3 id="1、在使用CoreLocation前需要调用如下函数【iOS8专用】：">1、在使用CoreLocation前需要调用如下函数【iOS8专用】：</h3>
+<p>iOS8对定位进行了一些修改，其中包括定位授权的方法，CLLocationManager增加了下面的两个方法：</p>
+<p>（1）始终允许访问位置信息</p>
+<ul>
+<li>(void)requestAlwaysAuthorization;</li>
+</ul>
+<p>（2）使用应用程序期间允许访问位置数据</p>
+<ul>
+<li>(void)requestWhenInUseAuthorization;</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">self.locationManager = [[CLLocationManager alloc]init]; </div><div class="line">_locationManager.delegate = self; </div><div class="line">_locationManager.desiredAccuracy = kCLLocationAccuracyBest; </div><div class="line">_locationManager.distanceFilter = <span class="number">10</span>; </div><div class="line">[_locationManager requestAlwaysAuthorization];//添加这句 </div><div class="line">[_locationManager startUpdatingLocation];</div></pre></td></tr></table></figure>
+
+<h3 id="2、在Info-plist文件中添加如下配置：">2、在Info.plist文件中添加如下配置：</h3>
+<p>（1）NSLocationAlwaysUsageDescription</p>
+<p>（2）NSLocationWhenInUseUsageDescription</p>
+<p><img src="/img/CoreLocation/plist.png" alt="CoreLocation"></p>
 
       
     </div>
