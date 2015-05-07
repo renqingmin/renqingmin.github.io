@@ -230,7 +230,7 @@
 <h2 id="iOS8_中定位的变化">iOS8 中定位的变化</h2>
 <p>在iOS8中，苹果已经强制开发者在请求定位服务时获得用户的授权，此外iOS状态栏中还有指示图标，提示用户当前应用是否正在使用定位服务。另外在iOS8中，苹果进一步改善了定位服务，让开发者请求定位服务时需要向用户提供更多的透明。此外，iOS8中还支持让应用开发者调用全新的“访问监控”功能，当用户允许后应用才能获得更多的定位数据。</p>
 <h2 id="iOS8_以前使用CoreLocation定位">iOS8 以前使用CoreLocation定位</h2>
-<h3 id="1、首先定义一个全局的变量用来记录CLLocationManager对象，引入CoreLocation-framework使用#import_">1、首先定义一个全局的变量用来记录CLLocationManager对象，引入CoreLocation.framework使用#import <corelocation corelocation.h=""></corelocation></h3>
+<h3 id="1、首先定义一个全局的变量用来记录CLLocationManager对象，引入CoreLocation-framework使用#import_CoreLocation/CoreLocation-h">1、首先定义一个全局的变量用来记录CLLocationManager对象，引入CoreLocation.framework使用#import CoreLocation/CoreLocation.h</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nonatomic, strong) CLLocationManager  *locationManager;</div></pre></td></tr></table></figure>
 
 <h3 id="2、初始化CLLocationManager并开始定位">2、初始化CLLocationManager并开始定位</h3>
