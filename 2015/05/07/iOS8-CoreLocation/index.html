@@ -225,11 +225,11 @@
         <p><img src="/img/CoreLocation/CoreLocation.jpg" alt="CoreLocation"></p>
 <a id="more"></a>
 
-<h2 id="iOS_支持的定位方式">iOS 支持的定位方式</h2>
+<h2 id="一、iOS_支持的定位方式">一、iOS 支持的定位方式</h2>
 <p>iOS 支持三种检测当前位置的方式：手机基站、Wi-Fi、和GPS，其中GPS是经度最高的，同时也是最耗费手机电量的。一般情况下在室内是无法通过GPS获 取位置信息的，通过Wi-Fi获取位置的原理是通过网络提供商的IP地址信息来获取位置，经度不是很高，最后是通过手机基站获取位置，手机开机后会连接附 近的基站塔获取信号，通过基站可以得到手机所在的位置信息，基站越密集，所获取的位置信息经度就越高。</p>
-<h2 id="iOS8_中定位的变化">iOS8 中定位的变化</h2>
+<h2 id="二、iOS8_中定位的变化">二、iOS8 中定位的变化</h2>
 <p>在iOS8中，苹果已经强制开发者在请求定位服务时获得用户的授权，此外iOS状态栏中还有指示图标，提示用户当前应用是否正在使用定位服务。另外在iOS8中，苹果进一步改善了定位服务，让开发者请求定位服务时需要向用户提供更多的透明。此外，iOS8中还支持让应用开发者调用全新的“访问监控”功能，当用户允许后应用才能获得更多的定位数据。</p>
-<h2 id="iOS8_以前使用CoreLocation定位">iOS8 以前使用CoreLocation定位</h2>
+<h2 id="三、iOS8_以前使用CoreLocation定位">三、iOS8 以前使用CoreLocation定位</h2>
 <h3 id="1、首先定义一个全局的变量用来记录CLLocationManager对象，引入CoreLocation-framework">1、首先定义一个全局的变量用来记录CLLocationManager对象，引入CoreLocation.framework</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nonatomic, strong) CLLocationManager  *locationManager;</div></pre></td></tr></table></figure>
 
@@ -247,7 +247,7 @@
 <h3 id="4、在viewWillDisappear关闭定位">4、在viewWillDisappear关闭定位</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (void)viewWillDisappear:(BOOL)animated { </div><div class="line">    </div><div class="line">    [super viewWillDisappear:animated]; </div><div class="line">    [_locationManager stopUpdatingLocation]; </div><div class="line"></div><div class="line">}</div></pre></td></tr></table></figure>
 
-<h2 id="iOS8中使用CoreLocation定位">iOS8中使用CoreLocation定位</h2>
+<h2 id="四、iOS8_中使用CoreLocation定位">四、iOS8 中使用CoreLocation定位</h2>
 <h3 id="1、在使用CoreLocation前需要调用如下函数【iOS8专用】：">1、在使用CoreLocation前需要调用如下函数【iOS8专用】：</h3>
 <p>iOS8对定位进行了一些修改，其中包括定位授权的方法，CLLocationManager增加了下面的两个方法：</p>
 <p>（1）始终允许访问位置信息</p>
@@ -264,7 +264,7 @@
 <p>（1）NSLocationAlwaysUsageDescription</p>
 <p>（2）NSLocationWhenInUseUsageDescription</p>
 <p><img src="/img/CoreLocation/plist.png" alt="CoreLocation"></p>
-<h2 id="部分代码">部分代码</h2>
+<h2 id="五、部分代码实现">五、部分代码实现</h2>
 
       
     </div>
