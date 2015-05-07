@@ -3,39 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>XMPP环境配置 | 第三方</title>
+  <title>iOS8 - CoreLocation地图定位 | 第三方</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="XMPP环境配置">
-<meta property="og:url" content="http://yoursite.com/2015/03/01/XMPP/">
+<meta property="og:title" content="iOS8 - CoreLocation地图定位">
+<meta property="og:url" content="http://yoursite.com/2015/05/07/iOS8-CoreLocation/">
 <meta property="og:site_name" content="第三方">
 <meta property="og:description">
-<meta property="og:image" content="/img/xmpp/xmpp.jpg">
-<meta property="og:image" content="/img/xmpp/1.png">
-<meta property="og:image" content="/img/xmpp/2.png">
-<meta property="og:image" content="/img/xmpp/3.png">
-<meta property="og:image" content="/img/xmpp/4.png">
-<meta property="og:image" content="/img/xmpp/5.png">
-<meta property="og:image" content="/img/xmpp/6.png">
-<meta property="og:image" content="/img/xmpp/7.png">
-<meta property="og:image" content="/img/xmpp/8.png">
-<meta property="og:image" content="/img/xmpp/9.png">
-<meta property="og:image" content="/img/xmpp/10.png">
-<meta property="og:image" content="/img/xmpp/11.png">
-<meta property="og:image" content="/img/xmpp/12.png">
-<meta property="og:image" content="/img/xmpp/13.png">
-<meta property="og:image" content="/img/xmpp/14.png">
-<meta property="og:image" content="/img/xmpp/15.png">
-<meta property="og:image" content="/img/xmpp/16.png">
-<meta property="og:image" content="/img/xmpp/17.png">
-<meta property="og:image" content="/img/xmpp/18.png">
-<meta property="og:image" content="/img/xmpp/19.png">
-<meta property="og:image" content="/img/xmpp/20.png">
-<meta property="og:image" content="/img/xmpp/21.png">
-<meta property="og:image" content="/img/xmpp/22.png">
+<meta property="og:image" content="/img/CoreLocation/CoreLocation.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XMPP环境配置">
+<meta name="twitter:title" content="iOS8 - CoreLocation地图定位">
 <meta name="twitter:description">
 
   
@@ -216,16 +194,14 @@
 		</header>				
 	</div>
 </nav>
-      <article id="post-XMPP" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-iOS8-CoreLocation" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/03/01/XMPP/" class="article-date">
-  	<time datetime="2015-03-01T09:24:10.000Z" itemprop="datePublished">3月 1 2015</time>
+      <a href="/2015/05/07/iOS8-CoreLocation/" class="article-date">
+  	<time datetime="2015-05-07T02:53:25.000Z" itemprop="datePublished">5月 7 2015</time>
 </a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XMPP/">XMPP</a></li></ul>
-
     </div>
   
   <div class="article-inner">
@@ -237,7 +213,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      XMPP环境配置
+      iOS8 - CoreLocation地图定位
     </h1>
   
 
@@ -245,52 +221,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/img/xmpp/xmpp.jpg" alt="xmpp"></p>
+        <p><img src="/img/CoreLocation/CoreLocation.jpg" alt="CoreLocation"></p>
 <a id="more"></a>
 
-<p>配置XMPP环境首先需要安装几个软件，（XAMPP，openfire 本地服务器，spark 模拟即时通讯软件）</p>
-<h2 id="一、安装XAMPP，一直next到底，最后安装完成关闭，出现如下界面">一、安装XAMPP，一直next到底，最后安装完成关闭，出现如下界面</h2>
-<p><img src="/img/xmpp/1.png" alt="安装XAMPP"></p>
-<h2 id="二、安装openfire服务器，一直继续到底，最后出现安装完成">二、安装openfire服务器，一直继续到底，最后出现安装完成</h2>
-<p><img src="/img/xmpp/2.png" alt="安装成功"></p>
-<h2 id="三、在XAMPP中点击_Start_All_启动所有服务，让所有服务全部_Running，如图">三、在XAMPP中点击 Start All 启动所有服务，让所有服务全部 Running，如图</h2>
-<p><img src="/img/xmpp/3.png" alt="running"></p>
-<h2 id="四、配置openfire服务器，在浏览器中输入_http://127-0-0-1:9090">四、配置openfire服务器，在浏览器中输入 <a href="http://127.0.0.1:9090" target="_blank" rel="external">http://127.0.0.1:9090</a></h2>
-<p>（1）</p>
-<p><img src="/img/xmpp/4.png" alt="配置"></p>
-<p>（2）选择语言，根据自己擅长的语言选区，这里我们选择 中文（简体），然后点Continue</p>
-<p><img src="/img/xmpp/5.png" alt="配置"></p>
-<p>（3）服务器设置，设置域名，域名可以随便写，但不可以写中文和一些乱七八糟的符号。其余的默认不用修改，然后点击 继续</p>
-<p><img src="/img/xmpp/6.png" alt="配置"></p>
-<p>（4）数据库设置，两个数据库都可以用，建议用 标准数据库连接 ，然后点击继续</p>
-<p><img src="/img/xmpp/7.png" alt="配置"></p>
-<p>（5）数据库设置 －标准连接，数据库驱动选项 选择 MySQL，然后下面 JDBC 驱动程序类，数据库 URL 会默认自动填上，用户名 写 root，密码不写，然后暂停，当前页面不要关闭，再打开一个浏览器页面，见（6）</p>
-<p><img src="/img/xmpp/8.png" alt="配置"></p>
-<p>（6）配置XAMPP，在浏览器中输入 <a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a></p>
-<p><img src="/img/xmpp/9.png" alt="配置"></p>
-<p>（7）然后选择，phpMyAdmin</p>
-<p><img src="/img/xmpp/10.png" alt="配置"></p>
-<p>（8）然后 New 创建一个数据库，输入一个数据库名字，然后点击创建，显示已创建数据库，创建成功</p>
-<p><img src="/img/xmpp/11.png" alt="配置"></p>
-<p><img src="/img/xmpp/12.png" alt="配置"></p>
-<p>（9）选中刚创建数据库，会发现里面是空的，这时候我们需要向数据库中导入一个依赖库。首先我们要找到我们需要的依赖库，在跟目录下，选择 usr &gt; local &gt; openfire，这时候会发现openfire我们无权访问，右键openfire文件，点击 显示简介，然后将共享与权限全部改成 读与写，然后我们会看见openfire中的文件</p>
-<p><img src="/img/xmpp/13.png" alt="配置"></p>
-<p><img src="/img/xmpp/14.png" alt="配置"></p>
-<p>（10）然后选择 openfire &gt; resources &gt; database &gt; openfire_mysql.sql，然后将openfire_mysql.sql 拖到桌面</p>
-<p><img src="/img/xmpp/15.png" alt="配置"></p>
-<p>（11）回到配置XAMPP浏览器中，选中数据库，点击导入，选取文件，文件选择的是刚才我们拖到桌面上的 openfire_mysql.sql 文件，然后点击执行</p>
-<p><img src="/img/xmpp/16.png" alt="配置"></p>
-<p><img src="/img/xmpp/17.png" alt="配置"></p>
-<p>（12） 回到配置 openfire服务器页面，在 数据库设置 - 标准连接 下对 数据库 URL 进行修改，将[host-name] 改成 127.0.0.1 ，[database-name] 改成刚才创建的数据库名字，然后点击继续</p>
-<p><img src="/img/xmpp/18.png" alt="配置"></p>
-<p>（13）特性设置，选择默认的 初始设置</p>
-<p><img src="/img/xmpp/19.png" alt="配置"></p>
-<p>（14）管理员帐户，直接跳过，可以不填，点击跳过。然后出现安装完成，最后点击登陆到管理控制台</p>
-<p><img src="/img/xmpp/20.png" alt="配置"></p>
-<p>（15）输入账号密码都是 admin</p>
-<p><img src="/img/xmpp/21.png" alt="配置"></p>
-<p>（16）登陆成功，会看见自己的服务器名称，此时XMPP环境已经配置完成</p>
-<p><img src="/img/xmpp/22.png" alt="配置"></p>
+<h2 id="iOS_支持的定位方式">iOS 支持的定位方式</h2>
+<p>iOS 支持三种检测当前位置的方式：手机基站、Wi-Fi、和GPS，其中GPS是经度最高的，同时也是最耗费手机电量的。一般情况下在室内是无法通过GPS获 取位置信息的，通过Wi-Fi获取位置的原理是通过网络提供商的IP地址信息来获取位置，经度不是很高，最后是通过手机基站获取位置，手机开机后会连接附 近的基站塔获取信号，通过基站可以得到手机所在的位置信息，基站越密集，所获取的位置信息经度就越高。</p>
+<h2 id="iOS8_中定位的变化">iOS8 中定位的变化</h2>
+<p>在iOS8中，苹果已经强制开发者在请求定位服务时获得用户的授权，此外iOS状态栏中还有指示图标，提示用户当前应用是否正在使用定位服务。另外在iOS8中，苹果进一步改善了定位服务，让开发者请求定位服务时需要向用户提供更多的透明。此外，iOS8中还支持让应用开发者调用全新的“访问监控”功能，当用户允许后应用才能获得更多的定位数据。</p>
+<h2 id="iOS8_以前使用CoreLocation定位">iOS8 以前使用CoreLocation定位</h2>
+<h3 id="1、首先定义一个全局的变量用来记录CLLocationManager对象，引入CoreLocation-framework使用#import_">1、首先定义一个全局的变量用来记录CLLocationManager对象，引入CoreLocation.framework使用#import <corelocation corelocation.h=""></corelocation></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nonatomic, strong) CLLocationManager  *locationManager;</div></pre></td></tr></table></figure>
+
+<h3 id="2、初始化CLLocationManager并开始定位">2、初始化CLLocationManager并开始定位</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">self.locationManager = [[CLLocationManager alloc]init]; </div><div class="line">_locationManager.delegate = self; </div><div class="line">_locationManager.desiredAccuracy = kCLLocationAccuracyBest;</div><div class="line">_locationManager.distanceFilter = <span class="number">10</span>; </div><div class="line">[_locationManager startUpdatingLocation];</div></pre></td></tr></table></figure>
+
+<h3 id="3、实现CLLocationManagerDelegate的代理方法">3、实现CLLocationManagerDelegate的代理方法</h3>
+<p>(1)获取到位置数据，返回的是一个CLLocation的数组，一般使用其中的一个</p>
+<ul>
+<li>(void)locationManager:(CLLocationManager <em>)manager didUpdateLocations:(NSArray </em>)locations {<br>CLLocation *currLocation = [locations lastObject];<br>NSLog(@”经度=%f 纬度=%f 高度=%f”, currLocation.coordinate.latitude, currLocation.coordinate.longitude, currLocation.altitude);<br>｝</li>
+</ul>
+<p>（2）获取经纬度失败的方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error</div><div class="line">{</div><div class="line">    <span class="keyword">if</span> ([error code] == kCLErrorDenied) { </div><div class="line"></div><div class="line">        //访问被拒绝 </div><div class="line">    </div><div class="line">    } <span class="keyword">if</span> ([error code] == kCLErrorLocationUnknown) { </div><div class="line"></div><div class="line">        //无法获取位置信息 </div><div class="line">    </div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h3 id="4、在viewWillDisappear关闭定位">4、在viewWillDisappear关闭定位</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (void)viewWillDisappear:(BOOL)animated { </div><div class="line">    </div><div class="line">    [super viewWillDisappear:animated]; </div><div class="line">    [_locationManager stopUpdatingLocation]; </div><div class="line"></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="iOS8中使用CoreLocation定位">iOS8中使用CoreLocation定位</h2>
+<!--未完待续-->
+
+
+
+
 
       
     </div>
@@ -299,18 +260,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/05/07/iOS8-CoreLocation/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          iOS8 - CoreLocation地图定位
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/01/27/NSLayoutConstraint/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">NSLayoutConstraint-代码实现自动布局</div>
+    <a href="/2015/03/01/XMPP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">XMPP环境配置</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
@@ -339,7 +291,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="XMPP" data-title="XMPP环境配置" data-url="http://yoursite.com/2015/03/01/XMPP/"></div>
+	<div class="ds-thread" data-thread-key="iOS8-CoreLocation" data-title="iOS8 - CoreLocation地图定位" data-url="http://yoursite.com/2015/05/07/iOS8-CoreLocation/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
