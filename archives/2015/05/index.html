@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: XMPP | 第三方</title>
+  <title>Archives: 2015/5 | 第三方</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="第三方">
-<meta property="og:url" content="http://yoursite.com/tags/XMPP/">
+<meta property="og:url" content="http://yoursite.com/archives/2015/05/">
 <meta property="og:site_name" content="第三方">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -195,15 +195,15 @@
 </nav>
       
   
-    <article id="post-XMPP" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-CocoaPods" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/03/01/XMPP/" class="article-date">
-  	<time datetime="2015-03-01T09:24:10.000Z" itemprop="datePublished">3月 1 2015</time>
+      <a href="/2015/05/08/CocoaPods/" class="article-date">
+  	<time datetime="2015-05-08T01:31:44.000Z" itemprop="datePublished">5月 8 2015</time>
 </a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XMPP/">XMPP</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CocoaPods/">CocoaPods</a></li></ul>
 
     </div>
   
@@ -216,7 +216,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/01/XMPP/">XMPP环境配置</a>
+      <a class="article-title" href="/2015/05/08/CocoaPods/">CocoaPods的安装使用</a>
     </h1>
   
 
@@ -224,13 +224,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/img/xmpp/xmpp.jpg" alt="xmpp"></p>
+        <p><img src="/img/CocoaPods/CocoaPods.jpg" alt="CocoaPods"></p>
+<p>在iOS项目中使用第三方类库可以说是非常常见的事，但是要正确地配置他们有时候是非常繁琐的事情，幸运的是CocoaPods是一个很好的解决方案。</p>
+<h2 id="什么是CocoaPods">什么是CocoaPods</h2>
+<p>CocoaPods是OS X和iOS下的一个第三类库管理工具，通过CocoaPods工具我们可以为项目添加被称为“Pods”的依赖库（这些类库必须是CocoaPods本身所支持的），并且可以轻松管理其版本。<br>Cocoapods意义体现在两个方面。第一，在引入第三方库时它可以自动为我们完成各种各样的配置，包括配置编译阶段、连接器选项、甚至是ARC环境下的-fno-objc-arc配置等。第二，使用CocoaPods可以很方便地查找新的第三方库，这些类库是比较“标准的”，而不是网上随便找到的，这样可以让我们找到真正好用的类库。<br>接下来我们将介绍CocoaPods的使用。</p>
+<h2 id="CocoaPods的核心组件">CocoaPods的核心组件</h2>
+<p>CocoaPods是用Ruby写的，并划分成了若干个Gem包。<br>CocoaPods在解析执行过程中最重要的几个包的路径分别是：CocoaPods/CocoaPods、 CocoaPods/Core 和 CocoaPods/Xcodeproj。<br>CocoaPods / CocoaPod：这是面向用户的组件，每当执行一个pod命令时，这个组件将被激活。它包括了所有实用CocoaPods的功能，并且还能调用其他gem包来执行任务。<br>CocoaPods / Core：Core gem提供了与CocoaPods相关的文件（主要是podfile和podspecs）的处理。 </p>
+<p>•    Podfile：该文件用于配置项目所需要的第三方库，它可以被高度定制。本文中我们主要在这里做动作。<br>•    Podspec：该文件描述了一个库将怎样被添加进工程中。.podspec文件可以标识该第三方库所需要的源码文件、依赖库、编译选项，以及其他第三方库需要的配置。<br>CocoaPods / Xcodeproj：这个包负责处理工程文件，它能创建以及修改.xcodeproj文件和.xcworkspace文件。它也可以作为一个独立的包使用，当你要编写修改项目文件的脚本时，可以考虑使用CocoaPods/Xcodeproj。</p>
+<h2 id="下载和安装CocoaPods">下载和安装CocoaPods</h2>
+<p>上面已经提到，CocoaPods是用Ruby写的，所以运行需要安装Ruby环境。Mac中已经自带Ruby环境，这个不用我们担心，如果认为Ruby环境不够新，我们可以先更新，打开终端，输入以下命令：</p>
+<h3 id="1、升级Ruby环境">1、升级Ruby环境</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem update --system</div></pre></td></tr></table></figure>
 
-        
-          <p class="article-more-link">
-            <a href="/2015/03/01/XMPP/#more">more >></a>
-          </p>
-        
+<p>此时会出现<br>ERROR:  While executing gem … (Gem::FilePermissionError)<br>You don’t have write permissions for the /Library/Ruby/Gems/2.0.0 directory.<br>zijingMacBook-Pro:~ shiyunlei$ sudo gem update —system<br>这个是因为你没有权限去更新Ruby<br>这个时候你可以在终端使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> gem update —system</div></pre></td></tr></table></figure>
+
+<p>来进行升级</p>
+<p><img src="/img/CocoaPods/1.png" alt="CocoaPods"></p>
+<p>这个时候表示Ruby升级完成。</p>
+<h3 id="2、安装CocoaPods时我们要访问cocoapods-org，该网站可能被我们大天朝墙了，这样下载安装可能会是龟速，幸好我们可以用淘宝的Ruby镜像来访问该网站，方法如下：">2、安装CocoaPods时我们要访问cocoapods.org，该网站可能被我们大天朝墙了，这样下载安装可能会是龟速，幸好我们可以用淘宝的Ruby镜像来访问该网站，方法如下：</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ gem sources --remove https://rubygems.org/</div><div class="line">$ gem sources <span class="operator">-a</span> http://ruby.taobao.org/</div><div class="line">可以使用下面的命令(红色部分)查看是否更换镜像成功（如下图所示）：</div><div class="line">$ gem sources <span class="operator">-l</span></div></pre></td></tr></table></figure>
+
+<p><img src="/img/CocoaPods/2.png" alt="CocoaPods"></p>
+<h3 id="3、安装Cocoapods，在终端输入命令">3、安装Cocoapods，在终端输入命令</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> gem install cocoapods</div></pre></td></tr></table></figure>
+
+<p>这个时候会提示你输入密码，注：在终端输入密码不会有提示，光标也不会移动，一定要注意<br>开始安装，如下图：PS:这个过程可能花费时间比较长</p>
+<p><img src="/img/CocoaPods/3.png" alt="CocoaPods"></p>
+<p>安装成功如下：</p>
+<p><img src="/img/CocoaPods/4.png" alt="CocoaPods"></p>
+
       
     </div>
   </div>
