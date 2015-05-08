@@ -229,27 +229,18 @@
 <h2 id="一、早前的几个网络框架">一、早前的几个网络框架</h2>
 <p>1、ASI框架: HTTP终结者.很牛, 但是有BUG, 已经停止更新.<br>2、MKNetworkKit (印度人写的).<br>3、AFN一直还在更新.</p>
 <p>AFNetworking的出现：MAC/iOS设计的一套网络框架.(为了简化网络操作)</p>
-<p>地址：<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">https://github.com/AFNetworking/AFNetworking</a><br>*AFN专注与网络数据传输,以及网络中多线程的处理.</p>
+<p>地址：<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">https://github.com/AFNetworking/AFNetworking</a><br>AFN专注与网络数据传输,以及网络中多线程的处理.</p>
 <h2 id="二、AFNetworking的使用">二、AFNetworking的使用</h2>
 <h3 id="1、AFN特性_:">1、AFN特性 :</h3>
-<p><em>登录传参数时,传递字典即可.(键名为参数名,键值为参数值).
-</em>自动到子线程中执行,执行完后返回主线程.<br>*返回的结果自动序列化为NSDictionary.</p>
+<p>登录传参数时,传递字典即可.(键名为参数名,键值为参数值).<br>自动到子线程中执行,执行完后返回主线程.<br>返回的结果自动序列化为NSDictionary.</p>
 <h3 id="2、使用AFN注意_:">2、使用AFN注意 :</h3>
-<p><em>AFHTTPRequestOperationManager封装了通过HTTP协议与Web应用程序进行通讯的常用方法.(这个实例化的时候不是单例, 因为没有shared字)
-</em>包括创建请求/响应序列化/网络监控/数据安全.<br>*方法等都是以AF开头的.</p>
+<p>AFHTTPRequestOperationManager封装了通过HTTP协议与Web应用程序进行通讯的常用方法.(这个实例化的时候不是单例, 因为没有shared字) 包括创建请求/响应序列化/网络监控/数据安全. 方法等都是以AF开头的.</p>
 <h3 id="3、AFN能做的_(网络中的都涵盖了):">3、AFN能做的 (网络中的都涵盖了):</h3>
-<p><em>GET/POST/PUT/DELETE/HEAD请求.
-</em>JSON数据解析/Plist数据解析.(不支持XML数据解析)<br><em>POSTJSON.
-</em>上传/下载.<br><em>断点续传（AFDownLoadRequestOpreation）
-</em>图片缓存到本地（AFCache）</p>
+<p>GET/POST/PUT/DELETE/HEAD请求.<br>JSON数据解析/Plist数据解析.(不支持XML数据解析)<br>POSTJSON.<br>上传/下载.<br>断点续传（AFDownLoadRequestOpreation）<br>图片缓存到本地（AFCache）</p>
 <h3 id="4、使用步骤_:_（可参考说明文档）">4、使用步骤 : （可参考说明文档）</h3>
-<p>1.首先需要实例化一个请求管理器AFHTTPRequestOperationManager.<br>2.设置请求的数据格式:默认是二进制.(不是可改)<br><em>AFHTTPRequestSerializer(二进制)
-</em>AFJSONRequestSerializer(JSON)<br>*AFPropertyListRequestSerializer(Plist)</p>
+<p>1.首先需要实例化一个请求管理器AFHTTPRequestOperationManager.<br>2.设置请求的数据格式:默认是二进制.(不是可改)<br>AFHTTPRequestSerializer(二进制)<br>AFJSONRequestSerializer(JSON)<br>AFPropertyListRequestSerializer(Plist)</p>
 <h3 id="3-设置响应的数据格式:默认是JSON-(不是可改)">3.设置响应的数据格式:默认是JSON.(不是可改)</h3>
-<p><em>AFHTTPResponseSerializer(二进制)
-</em>AFJSONResponseSerializer(JSON)<br><em>AFPropertyListResponseSerializer(Plist)
-</em>AFXMLParserResponseSerializer(XML)<br><em>AFImageResponseSerializer(Image)
-</em>AFCompoundResponseSerializer(组合的)<br>4.如果响应者的MIMEType不正确,就要修改acceptableContentTypes.<br>5.调用方法,发送响应的请求(GET/POST…).</p>
+<p>AFHTTPResponseSerializer(二进制)<br>AFJSONResponseSerializer(JSON)<br>AFPropertyListResponseSerializer(Plist)<br>AFXMLParserResponseSerializer(XML)<br>AFImageResponseSerializer(Image)<br>AFCompoundResponseSerializer(组合的)<br>4.如果响应者的MIMEType不正确,就要修改acceptableContentTypes.<br>5.调用方法,发送响应的请求(GET/POST…).</p>
 <h3 id="关于修改AFN源码：">关于修改AFN源码：</h3>
 <p>通常序列化时做对text/plan等的支持时，可以一劳永逸的修改源代码，在acceptableContentTypes中修改即可。</p>
 <h2 id="三、AFNetworking的使用代码片段">三、AFNetworking的使用代码片段</h2>
