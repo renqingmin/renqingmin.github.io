@@ -16,6 +16,14 @@
 <meta property="og:image" content="/img/CocoaPods/2.png">
 <meta property="og:image" content="/img/CocoaPods/3.png">
 <meta property="og:image" content="/img/CocoaPods/4.png">
+<meta property="og:image" content="/img/CocoaPods/6.png">
+<meta property="og:image" content="/img/CocoaPods/7.png">
+<meta property="og:image" content="/img/CocoaPods/8.png">
+<meta property="og:image" content="/img/CocoaPods/9.png">
+<meta property="og:image" content="/img/CocoaPods/10.png">
+<meta property="og:image" content="/img/CocoaPods/11.png">
+<meta property="og:image" content="/img/CocoaPods/12.png">
+<meta property="og:image" content="/img/CocoaPods/13.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CocoaPods的安装使用">
 <meta name="twitter:description">
@@ -258,6 +266,38 @@
 <p><img src="/img/CocoaPods/3.png" alt="CocoaPods"></p>
 <p>安装成功如下：</p>
 <p><img src="/img/CocoaPods/4.png" alt="CocoaPods"></p>
+<h3 id="4、使用search命令搜索类库名：">4、使用search命令搜索类库名：</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod search AFNetworking</div></pre></td></tr></table></figure>
+
+<p>如果CocoaPods支持，将会输出搜索到的所有类库版本和信息，以及在Podfile中配置的写法，终端返回信息如下：</p>
+<p><img src="/img/CocoaPods/6.png" alt="CocoaPods"></p>
+<h3 id="5、需要在工程中创建一个Podfile文件，">5、需要在工程中创建一个Podfile文件，</h3>
+<p>使用命令：</p>
+<figure class="highlight hash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /Users/shiyunlei/Desktop/CocoapodsSample (进入工程目录，<span class="built_in">cd</span>后面的是工程的路径)</div><div class="line">$ touch Podfile （创建Podfile文件）</div></pre></td></tr></table></figure>
+
+<p><img src="/img/CocoaPods/7.png" alt="CocoaPods"></p>
+<p>然后使用vim编辑Podfile文件，使用命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim Podfile</div></pre></td></tr></table></figure>
+
+<p>进入如下界面</p>
+<p><img src="/img/CocoaPods/8.png" alt="CocoaPods"></p>
+<p>然后紧接着按键盘上的“i”键，变成如下状态，这个时候可以对Podfile文件进行编辑：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ platform:ios, <span class="string">'7.0'</span></div><div class="line">$ pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt; 2.3.1'</span></div></pre></td></tr></table></figure>
+
+<p>在编辑完成后按“esc”，</p>
+<p>在按“:”,这个时候输入wq,点击回车，保存并退出。</p>
+<p><img src="/img/CocoaPods/9.png" alt="CocoaPods"></p>
+<p>这个时候打开Podfile文件就会看到里面添加了刚才在终端输入的一行语句，如下图</p>
+<p><img src="/img/CocoaPods/10.png" alt="CocoaPods"></p>
+<p>然后在终端输入命令安装相应的第三方类库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod install</div></pre></td></tr></table></figure>
+
+<p><img src="/img/CocoaPods/11.png" alt="CocoaPods"></p>
+<p>因为这个过程需要下载相应的类库，所以时间和网速有关。</p>
+<p>安装成功之后截图如下：</p>
+<p><img src="/img/CocoaPods/12.png" alt="CocoaPods"></p>
+<p>这个时候会看到之后打开工程都需要从类型为工程名.xcworkspace文件打开。</p>
+<p><img src="/img/CocoaPods/13.png" alt="CocoaPods"></p>
 
       
     </div>
