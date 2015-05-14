@@ -21,14 +21,14 @@
 
 从代码中分离文本：
 目前，应用展示的所有文本都是以硬编码字符串存在于Main.storyboard 和 ViewController里。为了本地化这些字符串，你需要把它们放在一个单独的文件中。他将会在包中简单地引用这些字符串，而不是在你的方法中进行硬变异。">
-<meta property="og:image" content="/img/Internationalization/1.jpg">
-<meta property="og:image" content="/img/Internationalization/2.jpg">
-<meta property="og:image" content="/img/Internationalization/3.jpg">
-<meta property="og:image" content="/img/Internationalization/4.jpg">
-<meta property="og:image" content="/img/Internationalization/5.jpg">
-<meta property="og:image" content="/img/Internationalization/6.jpg">
-<meta property="og:image" content="/img/Internationalization/7.jpg">
-<meta property="og:image" content="/img/Internationalization/8.jpg">
+<meta property="og:image" content="/img/Internationalization/1.png">
+<meta property="og:image" content="/img/Internationalization/2.png">
+<meta property="og:image" content="/img/Internationalization/3.png">
+<meta property="og:image" content="/img/Internationalization/4.png">
+<meta property="og:image" content="/img/Internationalization/5.png">
+<meta property="og:image" content="/img/Internationalization/6.png">
+<meta property="og:image" content="/img/Internationalization/7.png">
+<meta property="og:image" content="/img/Internationalization/8.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS应用国际化">
 <meta name="twitter:description" content="一、程序国际化
@@ -250,25 +250,25 @@
 <h2 id="一、程序国际化">一、程序国际化</h2>
 <h3 id="准备工作：">准备工作：</h3>
 <p>1、首先我们要先创建一个工程，我们给他命名Internationalization-Demo，然后添加语言。</p>
-<p><img src="/img/Internationalization/1.jpg" alt="Internationalization"></p>
+<p><img src="/img/Internationalization/1.png" alt="Internationalization"></p>
 <h3 id="从代码中分离文本：">从代码中分离文本：</h3>
 <p>目前，应用展示的所有文本都是以硬编码字符串存在于Main.storyboard 和 ViewController里。为了本地化这些字符串，你需要把它们放在一个单独的文件中。他将会在包中简单地引用这些字符串，而不是在你的方法中进行硬变异。<br>Xcode使用带有 .strings 扩展名的文件来存储和检索app中使用的所有字符串，以支持每种语言。根据iOS 设备当前使用的语言，代码中一个简单的方法调用将会查找并返回要求的字符串。</p>
 <p>2、创建一个.strings 扩展名的文件<br>打开File &gt; New &gt; File，选择Resource中Strings Fils，如图：<br>点击下一步，为文件命名为InfoPlist.strings，然后点击save。</p>
-<p><img src="/img/Internationalization/2.jpg" alt="Internationalization"></p>
+<p><img src="/img/Internationalization/2.png" alt="Internationalization"></p>
 <p>3、创建完成后，你可以看到工程目录结构文件如下，单击InfoPlist.strings，查看右边的属性，在Localizable栏添加语言。如图</p>
-<p><img src="/img/Internationalization/3.jpg" alt="Internationalization"></p>
+<p><img src="/img/Internationalization/3.png" alt="Internationalization"></p>
 <p>4、添加完成后打开对应语言文件，比如<br>English的添加：<br>CFBundleDisplayName = “hello world”;</p>
 <p>Chinese的添加：<br>CFBundleDisplayName = “世界 你好”;</p>
-<p><img src="/img/Internationalization/4.jpg" alt="Internationalization"></p>
+<p><img src="/img/Internationalization/4.png" alt="Internationalization"></p>
 <p>5、运行，如果你的模拟器是中文的，你会看到你的程序名称变成了  世界 你好</p>
-<p><img src="/img/Internationalization/5.jpg" alt="Internationalization"></p>
+<p><img src="/img/Internationalization/5.png" alt="Internationalization"></p>
 <p>在设置中把语言设置成英文的，你就会看到你的程序名称变成了  hello world</p>
-<p><img src="/img/Internationalization/6.jpg" alt="Internationalization"></p>
+<p><img src="/img/Internationalization/6.png" alt="Internationalization"></p>
 <h2 id="二、内容国际化">二、内容国际化</h2>
 <p>1、新建一个Localizable.strings 文件 (Localizable.strings 是系统默认名字)<br>2、添加语言同上<br>3、添加语言内容<br>在Localization.strings 中，按照”key” ＝ “value”的格式；然后使用时用NSLocalizedString(@”key”, @””)读取内容; 如果不是用系统默认名字那么使用<br>Localization.strings English 文件添加<br>“key” ＝ “hello world”</p>
 <p>Localization.strings Chinese 文件添加<br>“key” ＝ “世界 你好”</p>
-<p><img src="/img/Internationalization/7.jpg" alt="Internationalization"></p>
-<p><img src="/img/Internationalization/8.jpg" alt="Internationalization"></p>
+<p><img src="/img/Internationalization/7.png" alt="Internationalization"></p>
+<p><img src="/img/Internationalization/8.png" alt="Internationalization"></p>
 
       
     </div>
