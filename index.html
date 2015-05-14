@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第三方</title>
+  <title>M。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="第三方">
+<meta property="og:title" content="M。">
 <meta property="og:url" content="http://yoursite.com/">
-<meta property="og:site_name" content="第三方">
+<meta property="og:site_name" content="M。">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第三方">
+<meta name="twitter:title" content="M。">
 <meta name="twitter:description">
 
   
-    <link rel="alternative" href="/atom.xml" title="第三方" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="M。" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -38,7 +38,7 @@
 		</div>
 
 		<hgroup>
-		  <h1 class="header-author"><a href="/">第三方</a></h1>
+		  <h1 class="header-author"><a href="/">M。</a></h1>
 		</hgroup>
 
 		
@@ -162,7 +162,7 @@
 			</div>
 
 			<hgroup>
-			  <h1 class="header-author"><a href="/">第三方</a></h1>
+			  <h1 class="header-author"><a href="/">M。</a></h1>
 			</hgroup>
 			
 			<p class="header-subtitle">水利万物而不争，人傲于世而不顺。</p>
@@ -198,8 +198,8 @@
     <article id="post-Internationalization" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/05/09/Internationalization/" class="article-date">
-  	<time datetime="2015-05-09T13:36:13.000Z" itemprop="datePublished">5月 9 2015</time>
+      <a href="/2015/05/12/Internationalization/" class="article-date">
+  	<time datetime="2015-05-12T13:36:13.000Z" itemprop="datePublished">5月 12 2015</time>
 </a>
       
       
@@ -216,7 +216,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/09/Internationalization/">iOS应用国际化</a>
+      <a class="article-title" href="/2015/05/12/Internationalization/">iOS应用国际化</a>
     </h1>
   
 
@@ -224,7 +224,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="一、程序国际化">一、程序国际化</h2>
+<h3 id="准备工作：">准备工作：</h3>
+<p>1、首先我们要先创建一个工程，我们给他命名Internationalization-Demo，然后添加语言。</p>
+<p><img src="/img/Internationalization/1.jpg" alt="Internationalization"></p>
+<h3 id="从代码中分离文本：">从代码中分离文本：</h3>
+<p>目前，应用展示的所有文本都是以硬编码字符串存在于Main.storyboard 和 ViewController里。为了本地化这些字符串，你需要把它们放在一个单独的文件中。他将会在包中简单地引用这些字符串，而不是在你的方法中进行硬变异。<br>Xcode使用带有 .strings 扩展名的文件来存储和检索app中使用的所有字符串，以支持每种语言。根据iOS 设备当前使用的语言，代码中一个简单的方法调用将会查找并返回要求的字符串。</p>
+<p>2、创建一个.strings 扩展名的文件<br>打开File &gt; New &gt; File，选择Resource中Strings Fils，如图：<br>点击下一步，为文件命名为InfoPlist.strings，然后点击save。</p>
+<p><img src="/img/Internationalization/2.jpg" alt="Internationalization"></p>
+<p>3、创建完成后，你可以看到工程目录结构文件如下，单击InfoPlist.strings，查看右边的属性，在Localizable栏添加语言。如图</p>
+<p><img src="/img/Internationalization/3.jpg" alt="Internationalization"></p>
+<p>4、添加完成后打开对应语言文件，比如<br>English的添加：<br>CFBundleDisplayName = “hello world”;</p>
+<p>Chinese的添加：<br>CFBundleDisplayName = “世界 你好”;</p>
+<p><img src="/img/Internationalization/4.jpg" alt="Internationalization"></p>
+<p>5、运行，如果你的模拟器是中文的，你会看到你的程序名称变成了  世界 你好</p>
+<p><img src="/img/Internationalization/5.jpg" alt="Internationalization"></p>
+<p>在设置中把语言设置成英文的，你就会看到你的程序名称变成了  hello world</p>
+<p><img src="/img/Internationalization/6.jpg" alt="Internationalization"></p>
+<h2 id="二、内容国际化">二、内容国际化</h2>
+<p>1、新建一个Localizable.strings 文件 (Localizable.strings 是系统默认名字)<br>2、添加语言同上<br>3、添加语言内容<br>在Localization.strings 中，按照”key” ＝ “value”的格式；然后使用时用NSLocalizedString(@”key”, @””)读取内容; 如果不是用系统默认名字那么使用<br>Localization.strings English 文件添加<br>“key” ＝ “hello world”</p>
+<p>Localization.strings Chinese 文件添加<br>“key” ＝ “世界 你好”</p>
+<p><img src="/img/Internationalization/7.jpg" alt="Internationalization"></p>
+<p><img src="/img/Internationalization/8.jpg" alt="Internationalization"></p>
+
       
     </div>
   </div>
@@ -652,7 +674,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 第三方
+    		&copy; 2015 M。
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
