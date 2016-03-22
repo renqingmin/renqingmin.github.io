@@ -3,16 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/3 | R.</title>
+  <title>如何使用TestFlight进行App构建版本测试 | R.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="R.">
-<meta property="og:url" content="http://yoursite.com/archives/2015/03/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何使用TestFlight进行App构建版本测试">
+<meta property="og:url" content="http://yoursite.com/2015/01/22/TestFlight/">
 <meta property="og:site_name" content="R.">
 <meta property="og:description">
+<meta property="og:image" content="/img/TestFlight/TestFlight.jpg">
+<meta property="og:image" content="/img/TestFlight/TestFlight_Dev.jpg">
+<meta property="og:image" content="/img/TestFlight/TestFlight_Dev01.jpg">
+<meta property="og:image" content="/img/TestFlight/TestFlight_Dev02.jpg">
+<meta property="og:image" content="/img/TestFlight/TestFlight_Dev03.jpg">
+<meta property="og:image" content="/img/TestFlight/TestFlight_Dev04.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="R.">
+<meta name="twitter:title" content="如何使用TestFlight进行App构建版本测试">
 <meta name="twitter:description">
 
   
@@ -193,17 +199,15 @@
 		</header>				
 	</div>
 </nav>
-      
-  
-    <article id="post-CoreData" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-TestFlight" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/03/07/CoreData/" class="article-date">
-  	<time datetime="2015-03-07T12:15:31.000Z" itemprop="datePublished">3月 7 2015</time>
+      <a href="/2015/01/22/TestFlight/" class="article-date">
+  	<time datetime="2015-01-22T02:05:24.000Z" itemprop="datePublished">1月 22 2015</time>
 </a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CoreData/">CoreData</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TestFlight/">TestFlight</a></li></ul>
 
     </div>
   
@@ -215,8 +219,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/07/CoreData/">Cocoa 之 Core Data入门</a>
+    <h1 class="article-title" itemprop="name">
+      如何使用TestFlight进行App构建版本测试
     </h1>
   
 
@@ -224,69 +228,84 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/img/CoreData/CoreData.jpg" alt="CoreData"></p>
+        <p><img src="/img/TestFlight/TestFlight.jpg" alt="TestFlight"></p>
+<a id="more"></a>
+
+<p>在日常的开发当中，当一个项目在开发过程中或者完成准备上线，都需要我们进行真机测试，否则不可能开发完了就直接扔到了App，等上线了再下载看看，这都是不可能的。那么说到真机测试，大家肯定会想到弄一个99美刀的开发者账号，然后在开发者账号中把自己的设备注册成测试机，下载一个证书，一个描述文件，安装，运行，搞定。我平时也是这么搞得，但是对于高度强迫症的我来说，在项目发布前还是不放心使用测试机进行测试，万一把测试环境的版本传上去怎么办，所以这个时候我习惯性的就会使用TestFlight进行测试一下，不求别的，只求心安，那么为什么使用TestFlight进行测试就会心安，就不怕发错版本呢？ 它究竟是个什么鬼？<br>首先它的出现是在iOS8的时候，在Xcode 6和iOS 8上公开发行，它被整合到了iTunes Connect，你可以通过电子邮件的形式来邀请你的Beta测试成员。<br>TestFlight的测试方式分为两种，一种是内部测试，一种是外部测试。从功能上讲，这两种方式都可以为测试人员在测试阶段对你的App进行测试。但是既然分了内部测试和外部测试，他们肯定还是有区别的，所谓的内部主要是指iTunes Connect上在你的开发团队里参与技术开发或者管理的成员（管理员，技术，法务人员）。最多可以邀请25个内部成员，而与之相对的外部测试，指的是那些不属于你的团队或者公司的测试者，外部测试人员的上限是2000人。这里有一点需要注意的是，在你邀请外部成员参与测试之前，需要先通过苹果的审核，一般审核会在一天左右。而这一限制在内部成员上就没有，也就是说只要你把你的App上传到iTunes Connect上之后内部成员就可以开始进行内部测试了，无需审核。 </p>
+<p><img src="/img/TestFlight/TestFlight_Dev.jpg" alt="TestFlight 内部测试 外部测试"></p>
+<p>下面我们来说一下怎么使用这个东西，这个过程咱们给概括一下基本分为三步：<br>一：上传程序到iTunes Connect<br>上传程序到iTunes Connect，这个就不用多说了，大家都知道怎么上传，这里简单说一下，首先在iTunes Connect创建一个自己应用，已经有的就不必创建了，然后在Xcode上配置好相应的证书，对应用程序进行打包，最后通过  archive打包 或者 用Application Loader 上传，就可以了</p>
+<p>二：发送 TestFlight 测试邀请<br>登录开发者网站，<a href="https://developer.apple.com，来到iTunes" target="_blank" rel="external">https://developer.apple.com，来到iTunes</a> Connect，找到你刚才上传的app，找到TestFlight，然后选择内部测试，或者是外部测试，然后你还要进行选择测试版本，就是你要对哪个版本的app进行测试，选完了版本之后，要添加需要进行测试的人员，选择好人员之后最后一步，开始测试，这个时候被选择人员的邮箱就会收到一个TestFlight的测试邀请邮件，如下图：<br><img src="/img/TestFlight/TestFlight_Dev01.jpg" alt="TestFlight 页面"></p>
+<p>三：如果你没安装TestFlight这个app，先到AppStore上搜索 TestFlight，然后下载下来，使用你的Apple ID登录，然后在手机打开你的邮箱，找到刚才收到的邮件，要是没找到，建议到垃圾邮件看一眼，然后点击 Start Testing 按钮，这个时候会直接跳转到你的TestFlight上，最后点击INSTALL进行下载。如图：</p>
+<p><img src="/img/TestFlight/TestFlight_Dev02.jpg" alt="TestFlight App"></p>
+<p><img src="/img/TestFlight/TestFlight_Dev03.jpg" alt="TestFlight 邮件"></p>
+<p><img src="/img/TestFlight/TestFlight_Dev04.jpg" alt="安装"></p>
 
       
     </div>
   </div>
   
-</article>
-
-
-
-
-
-
-  
-    <article id="post-XMPP" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/03/01/XMPP/" class="article-date">
-  	<time datetime="2015-03-01T09:24:10.000Z" itemprop="datePublished">3月 1 2015</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XMPP/">XMPP</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+<nav id="article-nav">
+  
+    <a href="/2015/01/23/TFHpple/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/01/XMPP/">XMPP环境配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/img/xmpp/xmpp.png" alt="xmpp"></p>
-
+          使用TFHpple解析html
         
-          <p class="article-more-link">
-            <a href="/2015/03/01/XMPP/#more">more >></a>
-          </p>
-        
-      
-    </div>
-  </div>
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/08/CocoaPods/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CocoaPods的安装和使用</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="TestFlight" data-title="如何使用TestFlight进行App构建版本测试" data-url="http://yoursite.com/2015/01/22/TestFlight/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-  
-  
+
+
 
       <footer id="footer">
   <div class="outer">
