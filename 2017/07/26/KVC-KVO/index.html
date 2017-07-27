@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014 | R.</title>
+  <title>KVC&amp;KVO | R.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="R.">
-<meta property="og:url" content="http://yoursite.com/archives/2014/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KVC&KVO">
+<meta property="og:url" content="http://yoursite.com/2017/07/26/KVC-KVO/">
 <meta property="og:site_name" content="R.">
 <meta property="og:description">
+<meta property="og:image" content="/img/FMDB/FMDB.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="R.">
+<meta name="twitter:title" content="KVC&KVO">
 <meta name="twitter:description">
 
   
@@ -195,17 +196,15 @@
 		</header>				
 	</div>
 </nav>
-      
-  
-    <article id="post-AFNetworking" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-KVC-KVO" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/01/26/AFNetworking/" class="article-date">
-  	<time datetime="2014-01-26T07:49:20.000Z" itemprop="datePublished">1月 26 2014</time>
+      <a href="/2017/07/26/KVC-KVO/" class="article-date">
+  	<time datetime="2017-07-26T07:27:35.000Z" itemprop="datePublished">7月 26 2017</time>
 </a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AFNetworking/">AFNetworking</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KVC-KVO/">KVC&KVO</a></li></ul>
 
     </div>
   
@@ -217,8 +216,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/01/26/AFNetworking/">AFNetworking的使用</a>
+    <h1 class="article-title" itemprop="name">
+      KVC&amp;KVO
     </h1>
   
 
@@ -226,74 +225,79 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/img/AFNetworking/AFNetworking.jpg" alt="AFNetworking"></p>
+        <p><img src="/img/FMDB/FMDB.png" alt="FMDB"></p>
+<p><a id="more"></a></p>
+<h2 id="一、KVC&amp;KVO的基本介绍">一、KVC&amp;KVO的基本介绍</h2>
+<p>KVC（Key-Value Coding，键值编码），是一种可以通过字符串（Key值）来间接访问属性的机制。</p>
+<p>KVO（Key-Value Observing，键值观察），它允许被观察者的属性发生变化的时候通知观察者，是基于观察者模式，借助于KVC技术实现的一套机制。</p>
+<h2 id="二、KVC的使用">二、KVC的使用</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">### 修改值</span></div><div class="line"><span class="keyword">set</span>Value:<span class="keyword">for</span>Key</div><div class="line"><span class="keyword">set</span>Value:<span class="keyword">for</span>KeyPath</div><div class="line"><span class="keyword">set</span>ValuesForKeysWithDictionary:</div><div class="line"></div><div class="line"><span class="comment">### 获取值</span></div><div class="line">valueForKey:</div><div class="line">valueForKeyPath:</div></pre></td></tr></table></figure>
 
-        
-          <p class="article-more-link">
-            <a href="/2014/01/26/AFNetworking/#more">more >></a>
-          </p>
-        
+<h3 id="注意事项">注意事项</h3>
+<p>1、value必须是对象<br>2、可以通过重写setValue:forUndefinedKey:方法处理找不到对应Key的情况。<br>3、可以通过将accessInstanceVariablesDirectly设置为NO来禁止通过KVC间接访问实例变量。</p>
+<h2 id="三、KVO的使用">三、KVO的使用</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">### 注册：</span></div><div class="line">addObserver:<span class="keyword">for</span>KeyPath:Options:context:</div><div class="line"><span class="comment">### 实现监听方法：</span></div><div class="line">observeValueForKeyPath:ofObject:change:context:</div><div class="line"><span class="comment">### 注销：</span></div><div class="line">removeObserver:<span class="keyword">for</span>KeyPath:</div><div class="line">removeObserver:<span class="keyword">for</span>KeyPath:context:</div></pre></td></tr></table></figure>
+
+<h3 id="注意事项-1">注意事项</h3>
+<p>1、一定不要忘记注销观察者。</p>
+
       
     </div>
   </div>
   
-</article>
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/01/20/hello-world/" class="article-date">
-  	<time datetime="2014-01-20T04:00:00.000Z" itemprop="datePublished">1月 20 2014</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hello-World/">Hello World</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/01/20/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2015/06/22/TestFlight/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何使用TestFlight进行App构建版本测试</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/img/hexo/hexo-logo.png" alt=""></p>
-
-        
-          <p class="article-more-link">
-            <a href="/2014/01/20/hello-world/#more">more >></a>
-          </p>
-        
-      
-    </div>
-  </div>
   
 </article>
 
 
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="KVC-KVO" data-title="KVC&amp;KVO" data-url="http://yoursite.com/2017/07/26/KVC-KVO/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-  
-  
+
+
 
       <footer id="footer">
   <div class="outer">
