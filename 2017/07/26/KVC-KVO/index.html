@@ -231,13 +231,13 @@
 <p>KVC（Key-Value Coding，键值编码），是一种可以通过字符串（Key值）来间接访问属性的机制。</p>
 <p>KVO（Key-Value Observing，键值观察），它允许被观察者的属性发生变化的时候通知观察者，是基于观察者模式，借助于KVC技术实现的一套机制。</p>
 <h2 id="二、KVC的使用">二、KVC的使用</h2>
-<h4 id="修改值">修改值</h4>
+<h4 id="修改值：">修改值：</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">set</span>Value:<span class="keyword">for</span>Key</div><div class="line"><span class="keyword">set</span>Value:<span class="keyword">for</span>KeyPath</div><div class="line"><span class="keyword">set</span>ValuesForKeysWithDictionary:</div></pre></td></tr></table></figure>
 
-<h4 id="获取值">获取值</h4>
+<h4 id="获取值：">获取值：</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">valueForKey:</div><div class="line">valueForKeyPath:</div></pre></td></tr></table></figure>
 
-<h4 id="注意事项">注意事项</h4>
+<h4 id="注意事项：">注意事项：</h4>
 <p>1、value必须是对象<br>2、可以通过重写setValue:forUndefinedKey:方法处理找不到对应Key的情况。<br>3、可以通过将accessInstanceVariablesDirectly设置为NO来禁止通过KVC间接访问实例变量。</p>
 <h2 id="三、KVO的使用">三、KVO的使用</h2>
 <h4 id="注册：">注册：</h4>
@@ -249,7 +249,7 @@
 <h4 id="注销：">注销：</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">removeObserver:<span class="keyword">for</span>KeyPath:</div><div class="line">removeObserver:<span class="keyword">for</span>KeyPath:context:</div></pre></td></tr></table></figure>
 
-<h4 id="注意事项-1">注意事项</h4>
+<h4 id="注意事项：-1">注意事项：</h4>
 <p>1、一定不要忘记注销观察者。</p>
 
       
